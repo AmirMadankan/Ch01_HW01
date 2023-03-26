@@ -13,3 +13,10 @@ data = np.array(data)
 x = data[:, 0]
 y = data[:, 1]
 
+dy = y[1:] - y[:-1]
+dx = x[1:] - x[:-1]
+
+yprime = y.copy()
+yprime[1:] = dy/dx
+yprime[0] = yprime[1]
+
